@@ -48,6 +48,7 @@ to work with Bumper.
 
 - Configure your router DNS to point the domain lbo.ecovacs.net to
 the machine that will run the Bumper server
+EU: lb-eu.ecouser.net
 
 - Start Bumper with `pipenv run python bumper.py`
 
@@ -78,6 +79,7 @@ authenticates via Ecovacs central servers every time you start it.
 - Configure your DNS server to point the domains msg-na.ecouser.net and
 msg-ww.ecouser.net to the machine running Bumpy. Note: Depending on
 country, your phone may be using a different domain.
+EU: msg-eu.ecouser.net
 
 - Login to the app. It will authenticate and ask for a list of robots
 from Ecovacs central servers.
