@@ -2,7 +2,10 @@
 
 from http.server import HTTPServer
 from http.server import BaseHTTPRequestHandler
-from http import HTTPStatus
+try:
+    from http import HTTPStatus
+except ImportError:
+    from http import client
 from threading import Thread
 import socket, logging, ssl, json, sys
 
@@ -30,7 +33,10 @@ class RequestHandler(BaseHTTPRequestHandler):
                 body = "{'todo': 'result', 'result': 'ok', 'devices': [{'did': '{}', 'name': '{}', 'class': '{}', 'resource': 'atom', 'nick': None, 'company': 'eco'}]}"
             logging.debug("Response: " + body)
             body = body.encode()
-            self.send_response(HTTPStatus.OK)
+            try:
+                self.send_response(HTTPStatus.OK)
+            except NameError:
+                self.send_response(client.OK)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.send_header('Connection', 'keep-alive')
             self.send_header('Content-Length', len(body))
