@@ -48,7 +48,7 @@ to work with Bumper.
 
 - Configure your router DNS to point the domain lbo.ecovacs.net to
 the machine that will run the Bumper server
-EU: lb-eu.ecouser.net
+  - EU: lb-eu.ecouser.net [EdgeRouter Option A](https://help.ubnt.com/hc/en-us/articles/115010913367-EdgeRouter-DNS-Forwarding-Explanation-Setup-Options#customized%20options)
 
 - Start Bumper with `pipenv run python bumper.py`
 
