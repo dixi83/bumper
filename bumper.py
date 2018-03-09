@@ -7,8 +7,8 @@ import sys, socket
 logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s %(levelname)-8s %(message)s')
 
-conf_address = (socket.gethostbyname(socket.gethostname()), 8007)
-xmpp_address = (socket.gethostbyname(socket.gethostname()), 5223)
+conf_address = ("0.0.0.0", 8007)
+xmpp_address = ("0.0.0.0", 5223)
 
 # start conf server (async)
 conf_server = bumper.ConfServer(conf_address, ssl=False, async=True)
